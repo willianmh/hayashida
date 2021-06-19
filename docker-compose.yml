@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile.frontend
+    volumes:
+      - frontend_dist:/app/dist
+    networks:
+      - frontend_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile.backend
